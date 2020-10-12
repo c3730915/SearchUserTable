@@ -16,7 +16,6 @@ public class UserDaoImp implements UserDao {
         String sql = "select * from user2";
 
         List<User> users = template.query(sql, new BeanPropertyRowMapper<User>(User.class));
-        //TODO:
         return users;
     }
 }

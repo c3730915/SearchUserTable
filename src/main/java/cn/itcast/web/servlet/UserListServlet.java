@@ -19,10 +19,9 @@ public class UserListServlet extends HttpServlet {
         UserService service = new UserServiceImpl();
         List<User> users = service.findAll();
         //返回user集合 存入request域
-        System.out.println(users);
         request.setAttribute("users",users);
         //转发
-        request.getRequestDispatcher("test.jsp").forward(request,response);
+        request.getRequestDispatcher("list.jsp").forward(request,response);
 
     }
 
