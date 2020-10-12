@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page isELIgnored="false"%>
 <!DOCTYPE html>
@@ -41,56 +42,19 @@
             <th>邮箱</th>
             <th>操作</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>20</td>
-            <td>广东</td>
-            <td>44444222</td>
-            <td>zs@qq.com</td>
-            <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>20</td>
-            <td>广东</td>
-            <td>44444222</td>
-            <td>zs@qq.com</td>
-            <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>20</td>
-            <td>广东</td>
-            <td>44444222</td>
-            <td>zs@qq.com</td>
-            <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>20</td>
-            <td>广东</td>
-            <td>44444222</td>
-            <td>zs@qq.com</td>
-            <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>20</td>
-            <td>广东</td>
-            <td>44444222</td>
-            <td>zs@qq.com</td>
-            <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
-        </tr>
+        <c:forEach items="${users}" var ="user" varStatus="s">
+            <tr>
+                <td>${s.count}</td>
+                <td>${user.name}</td>
+                <td>${user.gender}</td>
+                <td>${user.age}</td>
+                <td>${user.address}</td>
+                <td>${user.qq}</td>
+                <td>${user.email}</td>
+                <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
+            </tr>
+        </c:forEach>
+
         <tr>
             <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
         </tr>
