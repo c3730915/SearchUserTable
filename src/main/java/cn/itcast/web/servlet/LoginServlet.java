@@ -51,16 +51,23 @@ public class LoginServlet extends HttpServlet {
 
         User loginUser = userService.login(user);
         //封装User对象
-        if (loginUser != null) {
-            //登陆成功
-            session.setAttribute("user",loginUser);
-            //调转页面
-            response.sendRedirect(request.getContextPath()+"/index.jsp");
+        try {
+            if (loginUser.getQq() != null) {
+                //登陆成功
+                session.setAttribute("user",loginUser);
+                //调转页面
+                response.sendRedirect(request.getContextPath()+"/index.jsp");
 
-        }else {
+            }else {
+                request.setAttribute("login_msg","用户名或密码错误");
+                request.getRequestDispatcher("/login.jsp").forward(request,response);
+
+            }
+        }
+        catch (NullPointerException e){
+            System.out.println(e);
             request.setAttribute("login_msg","用户名或密码错误");
             request.getRequestDispatcher("/login.jsp").forward(request,response);
-
         }
 
 
