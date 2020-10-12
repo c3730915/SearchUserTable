@@ -35,6 +35,9 @@
             float: left;
             text-align: center;
         }
+        .table{
+            padding-top: 160px;
+        }
 
     </style>
 </head>
@@ -64,31 +67,62 @@
         <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
         <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">删除选中</a></td>
     </div>
-    <table border="1" class="table table-bordered table-hover">
-        <tr class="success">
-            <th>编号</th>
-            <th>姓名</th>
-            <th>性别</th>
-            <th>年龄</th>
-            <th>籍贯</th>
-            <th>QQ</th>
-            <th>邮箱</th>
-            <th>操作</th>
-        </tr>
-        <c:forEach items="${users}" var ="user" varStatus="s">
-            <tr>
-                <td>${s.count}</td>
-                <td>${user.name}</td>
-                <td>${user.gender}</td>
-                <td>${user.age}</td>
-                <td>${user.address}</td>
-                <td>${user.qq}</td>
-                <td>${user.email}</td>
-                <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
+    <div class="table">
+        <table border="1" class="table table-bordered table-hover">
+            <tr class="success">
+                <th><input type="checkbox"></th>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>籍贯</th>
+                <th>QQ</th>
+                <th>邮箱</th>
+                <th>操作</th>
             </tr>
-        </c:forEach>
+            <c:forEach items="${users}" var ="user" varStatus="s">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>${s.count}</td>
+                    <td>${user.name}</td>
+                    <td>${user.gender}</td>
+                    <td>${user.age}</td>
+                    <td>${user.address}</td>
+                    <td>${user.qq}</td>
+                    <td>${user.email}</td>
+                    <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
+                </tr>
+            </c:forEach>
 
-    </table>
+        </table>
+    </div>
+
+    <span>
+
+        <nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+      <br>
+        <span style="font-size: 30px">
+            共16条记录，共4页
+        </span>
+  </ul>
+</nav>
+    </span>
 </div>
 </body>
 </html>
