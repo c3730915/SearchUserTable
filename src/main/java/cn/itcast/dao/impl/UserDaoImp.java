@@ -18,4 +18,17 @@ public class UserDaoImp implements UserDao {
         List<User> users = template.query(sql, new BeanPropertyRowMapper<User>(User.class));
         return users;
     }
+
+    @Override
+    public User findUserByUsernameAndPassword(String username, String password) {
+        try {
+            String sql = "select * from user2 where username = ? and password = ?";
+            User user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username, password);
+            return user;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
 }
