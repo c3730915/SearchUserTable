@@ -26,11 +26,44 @@
         td, th {
             text-align: center;
         }
+        .add_select{
+            margin-right: 20px;
+            float: right;
+
+        }
+        .search{
+            float: left;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
 <div class="container">
     <h3 style="text-align: center">用户信息列表</h3>
+    <div class="search">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="exampleInputName2">姓名</label>
+                <input type="text" class="form-control" id="exampleInputName2" placeholder="王五">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail2">籍贯</label>
+                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="陕西">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail2">Email</label>
+                <input type="email" class="form-control" id="test1" placeholder="xxx@gmail.com">
+            </div>
+            <button type="submit" class="btn btn-default">查询</button>
+        </form>
+
+
+    </div>
+    <div style="float: right" class="add_select">
+        <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
+        <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">删除选中</a></td>
+    </div>
     <table border="1" class="table table-bordered table-hover">
         <tr class="success">
             <th>编号</th>
@@ -55,9 +88,6 @@
             </tr>
         </c:forEach>
 
-        <tr>
-            <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
-        </tr>
     </table>
 </div>
 </body>
