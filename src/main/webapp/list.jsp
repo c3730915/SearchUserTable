@@ -64,8 +64,8 @@
 
     </div>
     <div style="float: right" class="add_select">
-        <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
-        <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">删除选中</a></td>
+        <td colspan="8" align="center"><a class="btn btn-primary" href="add.jsp">添加联系人</a></td>
+        <td colspan="8" align="center"><a class="btn btn-primary" href="add.jsp">删除选中</a></td>
     </div>
     <div class="table">
         <table border="1" class="table table-bordered table-hover">
