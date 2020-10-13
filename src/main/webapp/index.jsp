@@ -25,6 +25,11 @@
     }
   </style>
   <body>
+  <h2>
+    欢迎您<br>
+
+    ${user.name}
+  </h2>
   <div align="center">
     <a href="${pageContext.request.contextPath}/userListServlet" id="search" >点击查询用户信息</a>
     <h2>
