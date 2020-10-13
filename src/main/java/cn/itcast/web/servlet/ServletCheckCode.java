@@ -23,6 +23,7 @@ public class ServletCheckCode extends HttpServlet {
 
         //2.美化图片
         Graphics g = bufferedImage.getGraphics(); //画笔对象
+        g.setFont(new Font("Default",0,20));
         g.setColor(Color.PINK);
         g.fillRect(0,0,width,height);
         g.setColor(Color.BLUE);
